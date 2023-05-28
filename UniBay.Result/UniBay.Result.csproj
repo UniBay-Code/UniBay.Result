@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
+        <NoWarn>$(NoWarn);1591</NoWarn>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Product>UniBay.Result</Product>
+        <Copyright>Copyright 2023 Krzysztof Kubiak</Copyright>
+        <Authors>Krzysztof Kubiak</Authors>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <DebugSymbols>True</DebugSymbols>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <RepositoryUrl>https://github.com/UniBay-Code/UniBay.Result.git</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+    </PropertyGroup>
+    
+    <PropertyGroup>
+        <IsPackable>True</IsPackable>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <Description>Library for handling results, errors and exceptions in a clean, consistent way
+            across your applications</Description>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <PackageReadmeFile>README.MD</PackageReadmeFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="..\README.MD" Pack="true" PackagePath="\"/>
+    </ItemGroup>
+
+</Project>

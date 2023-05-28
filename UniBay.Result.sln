@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniBay.Result", "UniBay.Result\UniBay.Result.csproj", "{C16609BE-EC1B-4A17-824D-1F52796D8821}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniBay.Result.UnitTests", "UniBay.Result.UnitTests\UniBay.Result.UnitTests.csproj", "{FDB60C5F-1A2F-419A-BD66-39D2002E74CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C16609BE-EC1B-4A17-824D-1F52796D8821}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C16609BE-EC1B-4A17-824D-1F52796D8821}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C16609BE-EC1B-4A17-824D-1F52796D8821}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C16609BE-EC1B-4A17-824D-1F52796D8821}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDB60C5F-1A2F-419A-BD66-39D2002E74CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDB60C5F-1A2F-419A-BD66-39D2002E74CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDB60C5F-1A2F-419A-BD66-39D2002E74CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDB60C5F-1A2F-419A-BD66-39D2002E74CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

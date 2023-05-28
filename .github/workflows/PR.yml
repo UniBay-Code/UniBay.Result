@@ -1,0 +1,26 @@
+name: Build & Test PR
+
+on:
+  pull_request:
+    branches: [ "main", "develop" ]
+
+permissions:
+  id-token: write
+  contents: write
+  checks: write
+
+env:
+  DOTNET_VERSION: 7.0.x
+
+jobs:
+  build-test:
+    name: Build & Test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+   
+    - name: Build & Test
+      uses: ./.github/actions/build-test
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
