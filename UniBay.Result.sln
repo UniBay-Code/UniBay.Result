@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniBay.Result", "UniBay.Res
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniBay.Result.UnitTests", "UniBay.Result.UnitTests\UniBay.Result.UnitTests.csproj", "{FDB60C5F-1A2F-419A-BD66-39D2002E74CA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniBay.Result.AspNetCore", "UniBay.Result.AspNetCore\UniBay.Result.AspNetCore.csproj", "{C67CFD14-F059-4F42-AAFB-1D69010126BE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{ECA40D71-088E-4AB3-B601-71177A85DB55}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{972A7C56-24FE-4AC6-AD5B-73D8BEDD6AC6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +30,14 @@ Global
 		{FDB60C5F-1A2F-419A-BD66-39D2002E74CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDB60C5F-1A2F-419A-BD66-39D2002E74CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDB60C5F-1A2F-419A-BD66-39D2002E74CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C67CFD14-F059-4F42-AAFB-1D69010126BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C67CFD14-F059-4F42-AAFB-1D69010126BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C67CFD14-F059-4F42-AAFB-1D69010126BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C67CFD14-F059-4F42-AAFB-1D69010126BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C16609BE-EC1B-4A17-824D-1F52796D8821} = {ECA40D71-088E-4AB3-B601-71177A85DB55}
+		{C67CFD14-F059-4F42-AAFB-1D69010126BE} = {ECA40D71-088E-4AB3-B601-71177A85DB55}
+		{FDB60C5F-1A2F-419A-BD66-39D2002E74CA} = {972A7C56-24FE-4AC6-AD5B-73D8BEDD6AC6}
 	EndGlobalSection
 EndGlobal

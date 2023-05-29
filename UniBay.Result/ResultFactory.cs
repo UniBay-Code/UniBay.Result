@@ -6,7 +6,7 @@ public static class ResultFactory
 {
     public static Result<Nothing> AggregatedResult(params IResult[] results)
     {
-        var failedResults = results.Where(x => x.IsFailed);
+        var failedResults = results.Where(x => x.IsFailed).ToArray();
         if (!failedResults.Any()) return Nothing.Value;
         return new AggregateResultException(failedResults.Select(x => x.Exception));
     }
