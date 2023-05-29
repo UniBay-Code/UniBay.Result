@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using UniBay.Result.AspNetCore.Middleware;
 using UniBay.Result.AspNetCore.ResponseMapper;
 
 namespace UniBay.Result.AspNetCore;
@@ -16,6 +17,12 @@ public static class ServiceCollectionExtensions
 
         AddResultLoggers(app.ApplicationServices);
         
+        return app;
+    }
+    
+    public static IApplicationBuilder UseResultErrorHandlingMiddleware(this IApplicationBuilder app)
+    {
+        app.UseMiddleware<ResultErrorHandlingMiddleware>();
         return app;
     }
 

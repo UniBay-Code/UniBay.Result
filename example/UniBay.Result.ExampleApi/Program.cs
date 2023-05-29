@@ -18,6 +18,8 @@ var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
 
+// use middleware for handling exceptions
+app.UseResultErrorHandlingMiddleware();
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();

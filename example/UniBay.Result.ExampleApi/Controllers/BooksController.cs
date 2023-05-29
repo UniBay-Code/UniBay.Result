@@ -17,23 +17,24 @@ public class BooksController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> AddBook([FromBody] AddBookCommand command) => await HandleAsync(command);
+    public async Task<IActionResult> AddBook([FromBody] AddBookCommand command, [FromQuery]bool throwOnError = false) => await HandleAsync(command, throwOnError);
     
     [HttpGet("{id}/unknown-error")]
-    public async Task<IActionResult> UnknownError([FromRoute] int id, [FromQuery] string role)
-        => await HandleAsync(new GetBookQuery(id, role, false, true));
+    public async Task<IActionResult> UnknownError([FromRoute] int id, [FromQuery] string role, [FromQuery]bool throwOnError = false)
+        => await HandleAsync(new GetBookQuery(id, role, false, true), throwOnError);
     
     [HttpGet("{id}/service-error")]
-    public async Task<IActionResult> GetBookWithError([FromRoute] int id, [FromQuery] string role)
-        => await HandleAsync(new GetBookQuery(id, role, true));
+    public async Task<IActionResult> GetBookWithError([FromRoute] int id, [FromQuery] string role, [FromQuery]bool throwOnError = false)
+        => await HandleAsync(new GetBookQuery(id, role, true), throwOnError);
 
     [HttpGet("{id}")]
-    public async Task<IActionResult> GetBook([FromRoute] int id, [FromQuery] string role)
-        => await HandleAsync(new GetBookQuery(id, role));
+    public async Task<IActionResult> GetBook([FromRoute] int id, [FromQuery] string role, [FromQuery]bool throwOnError = false)
+        => await HandleAsync(new GetBookQuery(id, role), throwOnError);
 
-    private async Task<IActionResult> HandleAsync<TResult>(IRequest<Result<TResult>> request)
+    private async Task<IActionResult> HandleAsync<TResult>(IRequest<Result<TResult>> request, bool throwOnError = false)
     {
         var result = await this.mediator.Send(request);
+        if (throwOnError && result.IsFailed) throw result.Exception;
         return result.ToActionResult();
     }
 }

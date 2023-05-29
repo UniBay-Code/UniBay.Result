@@ -170,6 +170,18 @@ public void Configure(IApplicationBuilder app)
 `ResultActionResult` use `ResultInspector` just before writing response.
 
 
+### ResultErrorHandlingMiddleware
+
+Library provides middleware for handling exceptions that has been thrown.
+In case any exception is thrown, Middleware assures that all types of exceptions are translated and logged as configured,
+so the response is always the same, doesnt matter if you `return` exception or `throw` it.
+
+```csharp
+public void Configure(IApplicationBuilder app)
+{
+    app.UseResultErrorHandlingMiddleware();
+}
+```
 ## License
 
 [MIT](LICENSE)

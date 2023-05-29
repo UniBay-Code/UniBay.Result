@@ -5,13 +5,13 @@ using UniBay.Result.AspNetCore.ResponseMapper;
 
 namespace UniBay.Result.AspNetCore.Middleware;
 
-public class ErrorHandlingMiddleware
+public class ResultErrorHandlingMiddleware
 {
-    private static readonly JsonSerializerOptions SerializerOptions = new (JsonSerializerDefaults.Web);
-    private readonly ILogger<ErrorHandlingMiddleware> logger;
+    private static readonly JsonSerializerOptions serializerOptions = new (JsonSerializerDefaults.Web);
+    private readonly ILogger<ResultErrorHandlingMiddleware> logger;
     private readonly RequestDelegate next;
 
-    public ErrorHandlingMiddleware(RequestDelegate next, ILogger<ErrorHandlingMiddleware> logger)
+    public ResultErrorHandlingMiddleware(RequestDelegate next, ILogger<ResultErrorHandlingMiddleware> logger)
     {
         this.next = next;
         this.logger = logger;
@@ -25,6 +25,7 @@ public class ErrorHandlingMiddleware
         }
         catch (Exception ex)
         {
+            this.logger.LogInformation("Handled exception: {Message}", ex.Message);
             await HandleExceptionAsync(ex, httpContext);
         }
     }
@@ -38,7 +39,7 @@ public class ErrorHandlingMiddleware
         httpContext.Response.StatusCode = (int) result.Code.HttpStatusCode;
         httpContext.Response.ContentType = "application/json";
         
-        var responsePayload = JsonSerializer.Serialize(response, ErrorHandlingMiddleware.SerializerOptions);
+        var responsePayload = JsonSerializer.Serialize(response, ResultErrorHandlingMiddleware.serializerOptions);
         await httpContext.Response.WriteAsync(responsePayload);
     }
 }
