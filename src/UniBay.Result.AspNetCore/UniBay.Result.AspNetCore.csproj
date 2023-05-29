@@ -25,7 +25,7 @@
     <PropertyGroup>
         <IsPackable>True</IsPackable>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <Description>Extensions with mapping Result into ActionResult and inspection</Description>
+        <Description>Set of useful tools for ASP .NET Framework which makes handling different error types much easier</Description>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
         <PackageReadmeFile>README.MD</PackageReadmeFile>
     </PropertyGroup>
