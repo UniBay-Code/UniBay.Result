@@ -31,7 +31,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <None Include="..\README.MD" Pack="true" PackagePath="\" />
+        <None Include="..\..\README.MD" Pack="true" PackagePath="\" />
     </ItemGroup>
 
     <ItemGroup>

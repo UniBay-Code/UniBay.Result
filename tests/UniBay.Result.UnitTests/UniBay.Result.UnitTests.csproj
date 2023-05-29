@@ -24,7 +24,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\UniBay.Result\UniBay.Result.csproj" />
+      <ProjectReference Include="..\..\src\UniBay.Result\UniBay.Result.csproj" />
     </ItemGroup>
 
 </Project>
