@@ -5,7 +5,7 @@ namespace UniBay.Result;
 public readonly struct ResultCode
 {
     public readonly string Code = nameof(ResultCode.Error);
-    public readonly bool IsSuccess = false;
+    public readonly bool IsSuccess;
     public readonly bool IsFailed = true;
     public readonly HttpStatusCode HttpStatusCode = HttpStatusCode.BadGateway;
 
