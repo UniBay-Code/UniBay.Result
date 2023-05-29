@@ -1,5 +1,3 @@
-using UniBay.Result.Exceptions;
-
 namespace UniBay.Result;
 
 public readonly struct Result<TType> : IResult<TType>
