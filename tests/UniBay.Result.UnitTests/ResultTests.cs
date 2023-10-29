@@ -62,7 +62,7 @@ public class ResultTests
         changedResult.Should().NotBe(failedResult);
         changedResult.Exception.Should().BeOfType<ValidationException>();
         var failures = ((ValidationException) changedResult.Exception).Failures;
-        failures.Select(x => x.PropertyName).Should().AllSatisfy(propertyName => propertyName.Should().StartWith("TestProperty"));
+        failures.Select(x => x.PropertyName).Should().AllSatisfy(propertyName => propertyName.Should().StartWith("testProperty"));
     }
 
     [Fact]
