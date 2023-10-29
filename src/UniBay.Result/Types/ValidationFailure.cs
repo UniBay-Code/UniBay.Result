@@ -7,7 +7,7 @@ public readonly struct ValidationFailure
 
     public ValidationFailure(string propertyName, string message)
     {
-        this.PropertyName = propertyName;
+        this.PropertyName = propertyName.ToCamelCase();
         this.Message = message;
     }
 
